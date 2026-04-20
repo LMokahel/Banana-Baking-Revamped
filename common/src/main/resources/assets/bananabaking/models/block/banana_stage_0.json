@@ -1,0 +1,6 @@
+{
+	"parent": "bananabaking:block/banana_crop",
+	"textures": {
+		"cross": "bananabaking:block/banana_age_0"
+	}
+}

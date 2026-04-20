@@ -1,0 +1,100 @@
+{
+  "variants": {
+    "age=0,stage=0,sprouted=false": {
+      "model": "bananabaking:block/vanilla_bean_stage_0_age_0_sprouted_false"
+    },
+    "age=1,stage=0,sprouted=false": {
+      "model": "bananabaking:block/vanilla_bean_stage_0_age_1_sprouted_false"
+    },
+    "age=2,stage=0,sprouted=false": {
+      "model": "bananabaking:block/vanilla_bean_stage_0_age_2_sprouted_false"
+    },
+    "age=3,stage=0,sprouted=false": {
+      "model": "bananabaking:block/vanilla_bean_stage_0_age_3_sprouted_false"
+    },
+    "age=4,stage=0,sprouted=false": {
+      "model": "bananabaking:block/vanilla_bean_stage_0_age_4_sprouted_false"
+    },
+    "age=5,stage=0,sprouted=false": {
+      "model": "bananabaking:block/vanilla_bean_stage_0_age_5_sprouted_false"
+    },
+    "age=6,stage=0,sprouted=false": {
+      "model": "bananabaking:block/vanilla_bean_stage_0_age_6_sprouted_false"
+    },
+    "age=7,stage=0,sprouted=false": {
+      "model": "bananabaking:block/vanilla_bean_stage_0_age_7_sprouted_false"
+    },
+    "age=7,stage=0,sprouted=true": {
+      "model": "bananabaking:block/vanilla_bean_stage_0_age_7_sprouted_true"
+    },
+    "age=0,stage=1,sprouted=false": {
+      "model": "bananabaking:block/vanilla_bean_stage_1_age_0_sprouted_false"
+    },
+    "age=1,stage=1,sprouted=false": {
+      "model": "bananabaking:block/vanilla_bean_stage_1_age_1_sprouted_false"
+    },
+    "age=2,stage=1,sprouted=false": {
+      "model": "bananabaking:block/vanilla_bean_stage_1_age_2_sprouted_false"
+    },
+    "age=3,stage=1,sprouted=false": {
+      "model": "bananabaking:block/vanilla_bean_stage_1_age_3_sprouted_false"
+    },
+    "age=4,stage=1,sprouted=false": {
+      "model": "bananabaking:block/vanilla_bean_stage_1_age_4_sprouted_false"
+    },
+    "age=5,stage=1,sprouted=false": {
+      "model": "bananabaking:block/vanilla_bean_stage_1_age_5_sprouted_false"
+    },
+    "age=6,stage=1,sprouted=false": {
+      "model": "bananabaking:block/vanilla_bean_stage_1_age_6_sprouted_false"
+    },
+    "age=7,stage=1,sprouted=false": {
+      "model": "bananabaking:block/vanilla_bean_stage_1_age_7_sprouted_false"
+    },
+    "age=0,stage=0,sprouted=true": {
+      "model": "bananabaking:block/vanilla_bean_stage_0_age_0_sprouted_false"
+    },
+    "age=1,stage=0,sprouted=true": {
+      "model": "bananabaking:block/vanilla_bean_stage_0_age_1_sprouted_false"
+    },
+    "age=2,stage=0,sprouted=true": {
+      "model": "bananabaking:block/vanilla_bean_stage_0_age_2_sprouted_false"
+    },
+    "age=3,stage=0,sprouted=true": {
+      "model": "bananabaking:block/vanilla_bean_stage_0_age_3_sprouted_false"
+    },
+    "age=4,stage=0,sprouted=true": {
+      "model": "bananabaking:block/vanilla_bean_stage_0_age_4_sprouted_false"
+    },
+    "age=5,stage=0,sprouted=true": {
+      "model": "bananabaking:block/vanilla_bean_stage_0_age_5_sprouted_false"
+    },
+    "age=6,stage=0,sprouted=true": {
+      "model": "bananabaking:block/vanilla_bean_stage_0_age_6_sprouted_false"
+    },
+    "age=0,stage=1,sprouted=true": {
+      "model": "bananabaking:block/vanilla_bean_stage_1_age_0_sprouted_false"
+    },
+    "age=1,stage=1,sprouted=true": {
+      "model": "bananabaking:block/vanilla_bean_stage_1_age_1_sprouted_false"
+    },
+    "age=2,stage=1,sprouted=true": {
+      "model": "bananabaking:block/vanilla_bean_stage_1_age_2_sprouted_false"
+    },
+    "age=3,stage=1,sprouted=true": {
+      "model": "bananabaking:block/vanilla_bean_stage_1_age_3_sprouted_false"
+    },
+    "age=4,stage=1,sprouted=true": {
+      "model": "bananabaking:block/vanilla_bean_stage_1_age_4_sprouted_false"
+    },
+    "age=5,stage=1,sprouted=true": {
+      "model": "bananabaking:block/vanilla_bean_stage_1_age_5_sprouted_false"
+    },
+    "age=6,stage=1,sprouted=true": {
+      "model": "bananabaking:block/vanilla_bean_stage_1_age_6_sprouted_false"
+    },
+    "age=7,stage=1,sprouted=true": {
+      "model": "bananabaking:block/vanilla_bean_stage_1_age_7_sprouted_false"
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "bananabaking:block/baking_cross_top",
+  "textures": {
+    "cross": "bananabaking:block/vanilla_bean_stage_0_age_7_sprouted_true"
+  }
+}

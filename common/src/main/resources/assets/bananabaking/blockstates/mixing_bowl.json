@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "lit=true": {
+      "model": "bananabaking:block/mixing_bowl"
+    },
+    "lit=false": {
+      "model": "bananabaking:block/mixing_bowl"
+    }
+  }
+}

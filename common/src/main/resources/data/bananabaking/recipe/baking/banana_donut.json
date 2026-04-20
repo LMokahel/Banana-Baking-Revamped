@@ -1,0 +1,36 @@
+{
+  "type": "bananabaking:baking",
+  "ingredients": [
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "bananabaking:banana"
+    },
+    {
+      "item": "bananabaking:banana"
+    },
+    {
+      "item": "minecraft:wheat"
+    },
+    {
+      "item": "minecraft:wheat"
+    },
+    {
+      "item": "minecraft:milk_bucket"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "bananabaking:banana_donut"
+  }
+}

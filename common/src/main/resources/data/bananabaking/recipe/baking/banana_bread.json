@@ -1,0 +1,25 @@
+{
+  "type": "bananabaking:baking",
+  "cookingtime": 600,
+  "ingredients": [
+    {
+      "item": "bananabaking:banana"
+    },
+    {
+      "item": "bananabaking:banana"
+    },
+    {
+      "item": "minecraft:wheat"
+    },
+    {
+      "item": "minecraft:egg"
+    },
+    {
+      "item": "bananabaking:vanilla_extract"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "bananabaking:banana_bread"
+  }
+}

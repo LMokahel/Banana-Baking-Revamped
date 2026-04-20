@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "bananabaking:banana"
+    },
+    {
+      "item": "bananabaking:banana"
+    },
+    {
+      "item": "bananabaking:banana"
+    },
+    {
+      "item": "bananabaking:banana"
+    },
+    {
+      "item": "bananabaking:banana"
+    },
+    {
+      "item": "bananabaking:banana"
+    },
+    {
+      "item": "bananabaking:banana"
+    },
+    {
+      "item": "bananabaking:banana"
+    },
+    {
+      "item": "bananabaking:banana"
+    }
+  ],
+  "result": {
+    "id": "bananabaking:banana_bunch"
+  }
+}

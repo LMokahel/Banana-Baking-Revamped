@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "bananabaking:banana_pie"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "bananabaking:banana_pie_slice"
+  }
+}

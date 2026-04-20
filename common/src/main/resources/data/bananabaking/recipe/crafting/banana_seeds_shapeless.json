@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "minecraft:villager_plantable_seeds"
+    },
+    {
+      "tag": "c:yellow_dyes"
+    },
+    {
+      "tag": "c:yellow_dyes"
+    }
+  ],
+  "result": {
+    "id": "bananabaking:banana_seeds"
+  }
+}

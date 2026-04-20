@@ -1,0 +1,22 @@
+{
+  "type": "bananabaking:baking",
+  "ingredients": [
+    {
+      "item": "bananabaking:vanilla_beans"
+    },
+    {
+      "item": "bananabaking:vanilla_beans"
+    },
+    {
+      "item": "minecraft:glass_bottle"
+    },
+    {
+      "item": "minecraft:sweet_berries"
+    }
+
+  ],
+  "result": {
+    "count": 1,
+    "id": "bananabaking:vanilla_extract"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "minecraft:bricks"
+    },
+    "C": {
+      "item": "minecraft:white_concrete_powder"
+    },
+    "F": {
+      "tag": "minecraft:coals"
+    }
+  },
+  "pattern": [
+    "CCC",
+    "CFC",
+    "BBB"
+  ],
+  "result": {
+    "id": "bananabaking:baking_oven"
+  }
+}

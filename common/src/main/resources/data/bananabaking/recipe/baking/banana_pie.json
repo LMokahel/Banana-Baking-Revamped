@@ -1,0 +1,27 @@
+{
+  "type": "bananabaking:baking",
+  "ingredients": [
+    {
+      "item": "bananabaking:banana"
+    },
+    {
+      "item": "bananabaking:banana"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "minecraft:egg"
+    },
+    {
+      "item": "minecraft:wheat"
+    },
+    {
+      "item": "minecraft:wheat"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "bananabaking:banana_pie"
+  }
+}

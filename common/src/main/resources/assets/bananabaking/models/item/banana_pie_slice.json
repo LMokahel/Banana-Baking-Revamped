@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "bananabaking:item/banana_pie_slice"
+  }
+}

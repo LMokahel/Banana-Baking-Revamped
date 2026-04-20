@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "bananabaking:banana_bunch"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "bananabaking:banana"
+  }
+}

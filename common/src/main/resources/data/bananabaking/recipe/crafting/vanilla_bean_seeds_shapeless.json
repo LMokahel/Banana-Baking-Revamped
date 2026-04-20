@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "minecraft:villager_plantable_seeds"
+    },
+    {
+      "tag": "c:brown_dyes"
+    },
+    {
+      "tag": "c:brown_dyes"
+    }
+  ],
+  "result": {
+    "id": "bananabaking:vanilla_bean_seeds"
+  }
+}
