@@ -13,7 +13,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.RecipeSerializer;
-import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
 
 import java.util.List;
@@ -39,18 +38,30 @@ public abstract class CookingRecipe implements Recipe<CookingRecipeInput> {
     }
 
     public boolean matches(NonNullList<ItemStack> input){
-        NonNullList<ItemStack> inputCopy = NonNullList.create();
-        input.forEach(stack -> {if(!stack.isEmpty()) inputCopy.add(stack.copy());});
-        return ingredients.size() == inputCopy.size() &&
-            this.ingredients.stream().allMatch(ingredient ->
-                inputCopy.stream().anyMatch(stack -> {
-                    if(ingredient.test(stack)){
-                        stack.setCount(0);
-                        return true;
-                    }
-                    return false;
-                })
-            );
+        NonNullList<ItemStack> inputCopy = this.copyOf(input);
+
+        if(this.getIngredients().size() != inputCopy.size()) return false;
+
+        for(Ingredient ingredient: this.getIngredients()){
+            boolean matched = false;
+
+            for(int i = 0; i < inputCopy.size(); i++){
+                if(ingredient.test(inputCopy.get(i))){
+                    inputCopy.remove(i);
+                    matched = true;
+                    break;
+                }
+            }
+
+            if(!matched) return false;
+        }
+        return true;
+    }
+
+    private NonNullList<ItemStack> copyOf(NonNullList<ItemStack> stacks){
+        NonNullList<ItemStack> copy = NonNullList.create();
+        copy.addAll(stacks);
+        return copy;
     }
 
     public ItemStack assemble(CookingRecipeInput input, HolderLookup.Provider registries) {
@@ -80,12 +91,16 @@ public abstract class CookingRecipe implements Recipe<CookingRecipeInput> {
     }
 
     public NonNullList<ItemStack> getRemainingItems(NonNullList<ItemStack> input){
-        return input.stream()
-            .map(ItemStack::getItem)
-            .filter(Item::hasCraftingRemainingItem)
-            .map(Item::getCraftingRemainingItem)
-            .map(Item::getDefaultInstance)
-            .collect(Collectors.toCollection(NonNullList::create));
+        NonNullList<ItemStack> list = NonNullList.create();
+
+        for(ItemStack stack: input){
+            Item item = stack.getItem();
+
+            if(item.hasCraftingRemainingItem()){
+                list.add(item.getDefaultInstance());
+            }
+        }
+        return list;
     }
 
     @Override
@@ -94,20 +109,15 @@ public abstract class CookingRecipe implements Recipe<CookingRecipeInput> {
     }
 
     @Override
-    public RecipeSerializer<?> getSerializer() {
-        return BananaRecipeTypes.BAKING_RECIPE.serializer();
-    }
-
-    @Override
-    public RecipeType<?> getType() {
-        return BananaRecipeTypes.BAKING_RECIPE.type();
+    public boolean isSpecial() {
+        return true;
     }
 
     public abstract static class Serializer<T extends CookingRecipe> implements RecipeSerializer<T> {
 
         private final MapCodec<T> CODEC = RecordCodecBuilder.mapCodec(
             recipeInstance -> recipeInstance.group(
-                    Codec.INT.fieldOf("cookingtime").orElse(200).forGetter(CookingRecipe::getCookingTime),
+                    Codec.INT.fieldOf("cookingtime").forGetter(CookingRecipe::getCookingTime),
                     ItemStack.STRICT_CODEC.fieldOf("result").forGetter(CookingRecipe::getResultStack),
                     Ingredient.CODEC.listOf().fieldOf("ingredients").forGetter(CookingRecipe::getIngredients)
                 ).apply(recipeInstance, this.of())

@@ -4,9 +4,6 @@ import net.minecraft.core.NonNullList;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeInput;
 
-import java.util.function.Predicate;
-import java.util.stream.Collectors;
-
 public class CookingRecipeInput implements RecipeInput {
 
     NonNullList<ItemStack> items;
@@ -16,9 +13,13 @@ public class CookingRecipeInput implements RecipeInput {
     }
 
     public NonNullList<ItemStack> getItems(){
-        return this.items.stream()
-            .filter(Predicate.not(ItemStack::isEmpty))
-            .collect(Collectors.toCollection(NonNullList::create));
+        NonNullList<ItemStack> list = NonNullList.create();
+        for(ItemStack stack: this.items){
+            if(!stack.isEmpty()){
+                list.add(stack);
+            }
+        }
+        return list;
     }
 
     @Override

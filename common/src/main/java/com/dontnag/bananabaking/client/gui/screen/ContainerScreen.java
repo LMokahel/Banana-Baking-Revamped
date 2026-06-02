@@ -11,8 +11,8 @@ import net.minecraft.world.entity.player.Inventory;
 
 public abstract class ContainerScreen<T extends ContainerMenu<?>> extends AbstractContainerScreen<T> {
 
-    public int spaceX;
-    public int spaceY;
+    public int xSpace;
+    public int ySpace;
 
     public ContainerScreen(T menu, Inventory playerInventory, Component title) {
         super(menu, playerInventory, title);
@@ -29,9 +29,9 @@ public abstract class ContainerScreen<T extends ContainerMenu<?>> extends Abstra
         RenderSystem.setShader(GameRenderer::getPositionTexShader);
         RenderSystem.setShaderColor(1f, 1f, 1f, 1f);
         RenderSystem.setShaderTexture(0, this.getTexture());
-        this.spaceX = (width - imageWidth) / 2;
-        this.spaceY = (height - imageHeight) / 2;
-        guiGraphics.blit(this.getTexture(), this.spaceX, this.spaceY, 0, 0, imageWidth, imageHeight);
+        this.xSpace = (width - imageWidth) / 2;
+        this.ySpace = (height - imageHeight) / 2;
+        guiGraphics.blit(this.getTexture(), this.xSpace, this.ySpace, 0, 0, imageWidth, imageHeight);
     }
 
     protected abstract ResourceLocation getTexture();

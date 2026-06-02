@@ -14,8 +14,8 @@ public abstract class CookingScreen<T extends CookingMenu<?>> extends ContainerS
     @Override
     protected void renderBg(GuiGraphics guiGraphics, float partialTick, int mouseX, int mouseY) {
         super.renderBg(guiGraphics, partialTick, mouseX, mouseY);
-        this.renderProgressArrow(guiGraphics, this.spaceX, this.spaceY);
+        this.renderProgressArrow(guiGraphics, this.xSpace, this.ySpace, partialTick);
     }
 
-    protected abstract void renderProgressArrow(GuiGraphics guiGraphics, int x, int y);
+    protected abstract void renderProgressArrow(GuiGraphics guiGraphics, int x, int y, float partialTick);
 }

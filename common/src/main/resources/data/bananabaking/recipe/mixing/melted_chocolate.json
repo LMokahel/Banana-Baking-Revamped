@@ -1,5 +1,6 @@
 {
   "type": "bananabaking:mixing",
+  "cookingtime": 1000,
   "ingredients": [
     {
       "item": "minecraft:cocoa_beans"
@@ -7,6 +8,6 @@
   ],
   "result": {
     "count": 1,
-    "id": "minecraft:cocoa_beans"
+    "id": "minecraft:white_wool"
   }
 }

@@ -23,7 +23,7 @@ public class BakingOvenScreen extends CookingScreen<BakingOvenMenu> {
     }
 
     @Override
-    protected void renderProgressArrow(GuiGraphics guiGraphics, int x, int y) {
+    protected void renderProgressArrow(GuiGraphics guiGraphics, int x, int y, float partialTick) {
         guiGraphics.blit(this.getTexture(), x + 85, y + 34, 177, 13, this.getScaledProgress(), DECORATOR_HEIGHT);
     }
 
@@ -35,7 +35,7 @@ public class BakingOvenScreen extends CookingScreen<BakingOvenMenu> {
     @Override
     protected void renderBg(GuiGraphics guiGraphics, float partialTick, int mouseX, int mouseY) {
         super.renderBg(guiGraphics, partialTick, mouseX, mouseY);
-        this.renderFire(guiGraphics, this.spaceX, this.spaceY);
+        this.renderFire(guiGraphics, this.xSpace, this.ySpace);
     }
 
     private void renderFire(GuiGraphics guiGraphics, int x, int y){

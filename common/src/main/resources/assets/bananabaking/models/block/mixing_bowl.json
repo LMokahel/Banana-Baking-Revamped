@@ -1,10 +1,10 @@
 {
 	"format_version": "1.9.0",
 	"credit": "Made with Blockbench",
-	"render_type": "cutout",
 	"textures": {
 		"4": "bananabaking:block/mixing_bowl_bottom",
-		"5": "bananabaking:block/mixing_bowl_side"
+		"5": "bananabaking:block/mixing_bowl_side",
+		"particle": "minecraft:block/glass"
 	},
 	"elements": [
 		{

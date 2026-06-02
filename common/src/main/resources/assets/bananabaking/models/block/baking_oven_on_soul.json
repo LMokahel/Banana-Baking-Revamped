@@ -6,7 +6,7 @@
 		"5": "bananabaking:block/baking_oven_bottom",
 		"7": "bananabaking:block/baking_oven_side",
 		"8": "bananabaking:block/baking_oven_top",
-		"particle": "bananabaking:block/baking_oven_front_on_soul"
+		"particle": "bananabaking:block/baking_oven_bottom"
 	},
 	"elements": [
 		{

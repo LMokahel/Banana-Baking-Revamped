@@ -51,10 +51,13 @@ public abstract class ContainerMenu<T extends ContainerBlockEntity<?>> extends A
     }
 
     protected UtilSlot getUtil(Container container, int index){
-        return this.utilSlots.get(container).stream()
-            .filter(uSlot -> index == uSlot.getContainerSlot())
-            .findAny()
-            .orElse(null);
+        List<UtilSlot> slots = this.utilSlots.get(container);
+        for(UtilSlot slot: slots){
+            if(slot.getContainerSlot() == index){
+                return slot;
+            }
+        }
+        return null;
     }
 
     private void addPlayerInventory() {

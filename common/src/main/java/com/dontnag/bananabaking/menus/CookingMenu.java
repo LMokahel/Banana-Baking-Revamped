@@ -10,26 +10,30 @@ import net.minecraft.world.inventory.MenuType;
 public abstract class CookingMenu<T extends CookingBlockEntity<?, ?>> extends ContainerMenu<T>{
 
     private final SingleItemContainer output;
-    private final ContainerData containerData;
+    private final T blockEntity;
 
     protected CookingMenu(MenuType menuType, int syncId, Inventory playerInventory, T blockEntity) {
         super(menuType, syncId, playerInventory, blockEntity);
-        this.containerData = blockEntity.getContainerData();
+        this.blockEntity = blockEntity;
         this.output = blockEntity.getOutput();
         this.addOutputInventory();
-        addDataSlots(this.containerData);
+        addDataSlots(blockEntity.getContainerData());
     }
 
     public int getCookingProgress(){
-        return this.containerData.get(0);
+        return blockEntity.dataAccess.get(0);
     }
 
     public void incrementCookingProgress(int amount){
-        this.containerData.set(0, Math.min(this.getCookingProgress() + amount, this.getCookingTime()));
+        blockEntity.dataAccess.set(0, Math.min(this.getCookingProgress() + amount, this.getCookingTime()));
     }
 
     public int getCookingTime(){
-        return this.containerData.get(1);
+        return blockEntity.dataAccess.get(1);
+    }
+
+    public void setCookingTime(int cookingTime){
+        blockEntity.dataAccess.set(1, cookingTime);
     }
 
     protected SingleItemContainer getOutput(){

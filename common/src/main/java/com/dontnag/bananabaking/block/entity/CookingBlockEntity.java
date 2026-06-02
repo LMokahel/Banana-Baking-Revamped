@@ -25,9 +25,9 @@ import java.util.List;
 public abstract class CookingBlockEntity<T extends CookingMenu<?>, U extends CookingRecipe> extends ContainerBlockEntity<T>{
 
     private int cookingProgress = 0;
-    private int cookingTime = 72;
+    public int cookingTime = 0;
     private final SingleItemContainer output = new SingleItemContainer();
-    private final ContainerData dataAccess = new ContainerData() {
+    public final ContainerData dataAccess = new ContainerData() {
 
         @Override
         public int get(int index) {
@@ -65,7 +65,6 @@ public abstract class CookingBlockEntity<T extends CookingMenu<?>, U extends Coo
         }else{
             blockEntity.setCookingTime(recipe);
             blockEntity.setBoolean(BakingOvenBlock.LIT, true);
-            blockEntity.incrementProgress();
             if(blockEntity.isComplete()){
                 blockEntity.resetCooking();
                 blockEntity.craft(recipe);
@@ -80,6 +79,7 @@ public abstract class CookingBlockEntity<T extends CookingMenu<?>, U extends Coo
         this.handleRemainders(recipe);
         result.grow(this.getOutput().getItem().getCount());
         this.getOutput().setItem(result);
+        this.dataAccess.set(1, 0);
         this.setChanged();
     }
 
@@ -99,7 +99,14 @@ public abstract class CookingBlockEntity<T extends CookingMenu<?>, U extends Coo
     }
 
     protected NonNullList<ItemStack> getInput(){
-        return this.getContainer().getItems();
+        NonNullList<ItemStack> input = this.getContainer().getItems();
+        NonNullList<ItemStack> list = NonNullList.create();
+        for(ItemStack stack: input){
+            if(!stack.isEmpty()){
+                list.add(stack);
+            }
+        }
+        return list;
     }
 
     private void dropItem(ItemStack stack){
@@ -121,9 +128,9 @@ public abstract class CookingBlockEntity<T extends CookingMenu<?>, U extends Coo
         return this.dataAccess.get(0) >= this.dataAccess.get(1);
     }
 
-    protected void incrementProgress(){
+    public void incrementProgress(int amount){
         if(this.dataAccess.get(0) < this.dataAccess.get(1)){
-            this.dataAccess.set(0, this.dataAccess.get(0) + 1);
+            this.dataAccess.set(0, this.dataAccess.get(0) + amount);
             this.setChanged();
         }
     }
@@ -138,9 +145,6 @@ public abstract class CookingBlockEntity<T extends CookingMenu<?>, U extends Coo
     protected void resetCooking(){
         if(this.dataAccess.get(0) != 0){
             this.dataAccess.set(0, 0);
-        }
-        if(this.dataAccess.get(1) != 0){
-            this.dataAccess.set(1, 0);
         }
         this.setChanged();
     }
@@ -162,12 +166,14 @@ public abstract class CookingBlockEntity<T extends CookingMenu<?>, U extends Coo
 
     protected U getCurrentRecipe(){
         RecipeManager recipeManager = this.level.getRecipeManager();
-        List<RecipeHolder<U>> recipes = recipeManager.getAllRecipesFor(this.getRecipeType());
-        return recipes.stream()
-            .map(RecipeHolder::value)
-            .filter(recipe -> recipe.matches(this.getInput()))
-            .findAny()
-            .orElse(null);
+        List<RecipeHolder<U>> recipeHolders = recipeManager.getAllRecipesFor(this.getRecipeType());
+        for(RecipeHolder<U> holder: recipeHolders){
+            U recipe = holder.value();
+            if(recipe.matches(this.getInput())){
+                return recipe;
+            }
+        }
+        return null;
     }
 
     @Override
